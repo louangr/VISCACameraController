@@ -1,0 +1,109 @@
+﻿<core:CorePage xmlns:core="using:VISCACameraController.Core"
+               x:Class="VISCACameraController.Views.ControllerPage"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:local="using:VISCACameraController.Views"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               mc:Ignorable="d"
+               Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <core:CorePage.Resources>
+        <Style x:Key="PresetButtonStyle"
+               TargetType="Button">
+            <Setter Property="Width"
+                    Value="80" />
+            <Setter Property="Height"
+                    Value="60" />
+            <Setter Property="Padding"
+                    Value="0" />
+            <Setter Property="CornerRadius"
+                    Value="4" />
+        </Style>
+        <Style x:Key="PresetNumberTextBlockStyle"
+               TargetType="TextBlock">
+            <Setter Property="FontSize"
+                    Value="10" />
+            <Setter Property="Margin"
+                    Value="2,0,0,0" />
+        </Style>
+        <Style x:Key="PresetLabelTextBlockStyle"
+               TargetType="TextBlock">
+            <Setter Property="Grid.Row"
+                    Value="1" />
+            <Setter Property="Grid.Column"
+                    Value="1" />
+            <Setter Property="FontSize"
+                    Value="12" />
+            <Setter Property="TextTrimming"
+                    Value="CharacterEllipsis" />
+            <Setter Property="TextWrapping"
+                    Value="Wrap" />
+            <Setter Property="TextAlignment"
+                    Value="Center" />
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="VerticalAlignment"
+                    Value="Center" />
+        </Style>
+    </core:CorePage.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1"
+                    Margin="12">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Margin="0,0,18,0"
+                          Width="100"
+                          CornerRadius="4"
+                          ItemsSource="{x:Bind PageViewModel.ComPorts, Mode=OneWay}"
+                          SelectedItem="{x:Bind PageViewModel.SelectedComPort, Mode=TwoWay}"
+                          IsEnabled="{x:Bind PageViewModel.IsConnected, Converter={StaticResource BoolNegationConverter}, ConverterParameter=!, Mode=OneWay}" />
+                <Button Content="{x:Bind PageViewModel.ConnectionButtonContent, Mode=OneWay}"
+                        CornerRadius="4"
+                        IsEnabled="{x:Bind PageViewModel.IsCameraChangingPowerState, Converter={StaticResource BoolNegationConverter}, ConverterParameter=!, Mode=OneWay}"
+                        Command="{x:Bind PageViewModel.ConnectionCommand}" />
+                <ProgressRing IsActive="{x:Bind PageViewModel.IsCameraChangingPowerState, Mode=OneWay}"
+                              Width="20"
+                              Height="20"
+                              Margin="18,0,0,0" />
+            </StackPanel>
+
+            <ToggleSwitch x:Uid="CameraPowerToogleSwitch"
+                          IsEnabled="{x:Bind PageViewModel.IsCameraPowerToogleSwitchEnabled, Mode=OneWay}"
+                          Toggled="CameraPowerToogleSwitchToggled"
+                          Width="150"
+                          Margin="0,18"
+                          HorizontalAlignment="Left" />
+
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource PresetButtonStyle}">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset1NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset1LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</core:CorePage>

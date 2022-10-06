@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "VISCACameraController (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "VISCACameraController (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
