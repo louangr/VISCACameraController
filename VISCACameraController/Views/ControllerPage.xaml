@@ -25,7 +25,7 @@
             <Setter Property="FontSize"
                     Value="10" />
             <Setter Property="Margin"
-                    Value="2,0,0,0" />
+                    Value="3,0,0,0" />
         </Style>
         <Style x:Key="PresetLabelTextBlockStyle"
                TargetType="TextBlock">
@@ -82,7 +82,9 @@
                           HorizontalAlignment="Left" />
 
             <StackPanel Orientation="Horizontal">
-                <Button Style="{StaticResource PresetButtonStyle}">
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="1">
                     <Grid Width="78"
                           Height="58">
                         <Grid.ColumnDefinitions>
@@ -103,7 +105,241 @@
                                    Style="{StaticResource PresetLabelTextBlockStyle}" />
                     </Grid>
                 </Button>
+
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="2"
+                        Margin="18,0">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset2NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset2LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="3">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset3NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset3LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
             </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Margin="0,18">
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="4">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset4NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset4LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="5"
+                        Margin="18,0">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset5NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset5LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="6">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset6NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset6LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="7"
+                        Margin="49,0,18,0">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset7NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset7LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource PresetButtonStyle}"
+                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        CommandParameter="8">
+                    <Grid Width="78"
+                          Height="58">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="2.5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Uid="Preset8NumberTextBlock"
+                                   Style="{StaticResource PresetNumberTextBlockStyle}" />
+
+                        <TextBlock x:Uid="Preset8LabelTextBlock"
+                                   Style="{StaticResource PresetLabelTextBlockStyle}" />
+                    </Grid>
+                </Button>
+            </StackPanel>
+
+            <Grid Margin="0,36,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="18" />
+                    <ColumnDefinition Width="105" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Border Background="#000000"
+                            CornerRadius="8"
+                            Padding="8">
+                        <StackPanel>
+                            <ComboBox Width="130"
+                                      CornerRadius="4"
+                                      DisplayMemberPath="Label"
+                                      ItemsSource="{x:Bind PageViewModel.FocusModes, Mode=OneWay}"
+                                      SelectedItem="{x:Bind PageViewModel.SelectedFocusMode, Mode=TwoWay}" />
+
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,8,0,0">
+                                <Button x:Uid="FarManualFocusButton"
+                                        x:Name="FarManualFocusButton"
+                                        Margin="0,0,8,0"
+                                        Width="32"
+                                        Height="32"
+                                        IsEnabled="{x:Bind PageViewModel.IsAutoFocusModeEnabled, Converter={StaticResource BoolNegationConverter}, ConverterParameter=!, Mode=OneWay}" />
+                                <Button x:Uid="NearManualFocusButton"
+                                        x:Name="NearManualFocusButton"
+                                        Width="32"
+                                        Height="32"
+                                        IsEnabled="{x:Bind PageViewModel.IsAutoFocusModeEnabled, Converter={StaticResource BoolNegationConverter}, ConverterParameter=!, Mode=OneWay}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#F2F2F2"
+                            CornerRadius="8"
+                            Padding="8"
+                            Margin="0,18,0,0">
+                        <StackPanel>
+                            <TextBlock x:Uid="ZoomLabelTextBlock" />
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,8,0,0">
+                                <Button x:Uid="ZoomInButton"
+                                        x:Name="ZoomInButton"
+                                        Margin="0,0,8,0"
+                                        Width="32"
+                                        Height="32" />
+                                <Button x:Uid="ZoomOutButton"
+                                        x:Name="ZoomOutButton"
+                                        Width="32"
+                                        Height="32" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
         </StackPanel>
     </Grid>
 </core:CorePage>

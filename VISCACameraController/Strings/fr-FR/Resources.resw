@@ -120,6 +120,9 @@
   <data name="AppName" xml:space="preserve">
     <value>VISCA Camera Controller</value>
   </data>
+  <data name="AutoFocusModeLabel" xml:space="preserve">
+    <value>Auto</value>
+  </data>
   <data name="CameraPowerToogleSwitch.OffContent" xml:space="preserve">
     <value>Éteint</value>
   </data>
@@ -131,6 +134,15 @@
   </data>
   <data name="ConnectionButton_DisconnectionLabel" xml:space="preserve">
     <value>Se déconnecter</value>
+  </data>
+  <data name="FarManualFocusButton.Content" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="ManualFocusModeLabel" xml:space="preserve">
+    <value>Manuel</value>
+  </data>
+  <data name="NearManualFocusButton.Content" xml:space="preserve">
+    <value>-</value>
   </data>
   <data name="Preset1LabelTextBlock.Text" xml:space="preserve">
     <value>Orateur</value>
@@ -179,5 +191,14 @@
   </data>
   <data name="Preset8NumberTextBlock.Text" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="ZoomInButton.Content" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="ZoomLabelTextBlock.Text" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="ZoomOutButton.Content" xml:space="preserve">
+    <value>-</value>
   </data>
 </root>

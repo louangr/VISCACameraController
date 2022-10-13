@@ -10,7 +10,7 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
-    <PackageCertificateThumbprint>6E04F0E4CF97F9999C73AFBB79008F84A0CE9FA2</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>543CEECB0C6515A503D756B4B8C30E0EF36EA224</PackageCertificateThumbprint>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
   <ItemGroup>

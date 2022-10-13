@@ -28,6 +28,9 @@ namespace VISCACameraController.Views
         private RelayCommand connectionCommand;
         private bool isCameraChangingPowerState;
         private ViscaCommands viscaCommands;
+        private RelayCommand<string> presetCommand;
+        private List<FocusMode> focusModes;
+        private FocusMode selectedFocusMode;
 
         #endregion
 
@@ -77,12 +80,37 @@ namespace VISCACameraController.Views
             }
         }
 
+        public List<FocusMode> FocusModes
+        {
+            get => focusModes;
+            set
+            {
+                SetProperty(ref focusModes, value);
+            }
+        }
+
+        public FocusMode SelectedFocusMode
+        {
+            get => selectedFocusMode;
+            set
+            {
+                SetProperty(ref selectedFocusMode, value);
+                OnPropertyChanged(nameof(IsAutoFocusModeEnabled));
+                SendCommandOnSerialPort(value.Mode == Models.FocusModes.Auto ? viscaCommands.SetAutoFocus : viscaCommands.SetManualFocus);
+            }
+        }
+
+        public bool IsAutoFocusModeEnabled => SelectedFocusMode.Mode == Models.FocusModes.Auto;
+
         public string ConnectionButtonContent => LocalizedStrings.GetString(IsConnected ? "ConnectionButton_DisconnectionLabel" : "ConnectionButton_ConnectionLabel");
 
         public bool IsCameraPowerToogleSwitchEnabled => IsConnected && !IsCameraChangingPowerState;
 
         public RelayCommand ConnectionCommand
             => connectionCommand ?? (connectionCommand = new RelayCommand(() => Connect()));
+
+        public RelayCommand<string> PresetCommand
+            => presetCommand ?? (presetCommand = new RelayCommand<string>((string param) => SendPresetCommand(param)));
 
         #endregion
 
@@ -106,6 +134,12 @@ namespace VISCACameraController.Views
             isConnected = false;
             comPorts = new List<string>(SerialPort.GetPortNames());
             selectedComPort = comPorts.Count > 0 ? comPorts.First() : string.Empty;
+            focusModes = new List<FocusMode>();
+            foreach (FocusModes focusMode in Enum.GetValues(typeof(FocusModes)))
+            {
+                focusModes.Add(new FocusMode() { Mode = focusMode, Label = LocalizedStrings.GetString($"{focusMode}FocusModeLabel") });
+            }
+            selectedFocusMode = focusModes.Count > 0 ? focusModes.First() : null;
             serial = new SerialPort();
             isCameraChangingPowerState = false;
 
@@ -149,6 +183,11 @@ namespace VISCACameraController.Views
             catch (Exception)
             {
             }
+        }
+
+        private void SendPresetCommand(string preset)
+        {
+            SendCommandOnSerialPort(viscaCommands.GoToPreset.Replace("{P}", preset));
         }
 
         private void SendCommandOnSerialPort(string command)

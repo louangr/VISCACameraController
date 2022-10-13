@@ -120,6 +120,9 @@
   <data name="AppName" xml:space="preserve">
     <value>VISCA Camera Controller</value>
   </data>
+  <data name="AutoFocusModeLabel" xml:space="preserve">
+    <value>Auto</value>
+  </data>
   <data name="CameraPowerToogleSwitch.OffContent" xml:space="preserve">
     <value>Off</value>
   </data>
@@ -132,13 +135,22 @@
   <data name="ConnectionButton_DisconnectionLabel" xml:space="preserve">
     <value>Disconnect</value>
   </data>
+  <data name="FarManualFocusButton.Content" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="ManualFocusModeLabel" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="NearManualFocusButton.Content" xml:space="preserve">
+    <value>-</value>
+  </data>
   <data name="Preset1LabelTextBlock.Text" xml:space="preserve">
     <value>Speaker</value>
   </data>
   <data name="Preset1NumberTextBlock.Text" xml:space="preserve">
     <value>1</value>
   </data>
-    <data name="Preset2LabelTextBlock.Text" xml:space="preserve">
+  <data name="Preset2LabelTextBlock.Text" xml:space="preserve">
     <value>Reader</value>
   </data>
   <data name="Preset2NumberTextBlock.Text" xml:space="preserve">
@@ -179,5 +191,14 @@
   </data>
   <data name="Preset8NumberTextBlock.Text" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="ZoomInButton.Content" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="ZoomLabelTextBlock.Text" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="ZoomOutButton.Content" xml:space="preserve">
+    <value>-</value>
   </data>
 </root>

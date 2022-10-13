@@ -1,4 +1,7 @@
-﻿using Microsoft.UI.Xaml.Controls;
+﻿using System;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using VISCACameraController.Core;
 
 namespace VISCACameraController.Views
@@ -9,6 +12,8 @@ namespace VISCACameraController.Views
         {
             this.InitializeComponent();
             this.DataContext = App.Current.Services.GetService(typeof(ControllerPageViewModel));
+
+            Initialize();
         }
 
         #region Properties
@@ -16,12 +21,71 @@ namespace VISCACameraController.Views
         public ControllerPageViewModel PageViewModel
             => DataContext as ControllerPageViewModel;
 
-        #endregion Properties
+        #endregion
 
-        private void CameraPowerToogleSwitchToggled(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        #region Privates methods
+
+        private void Initialize()
+        {
+            NearManualFocusButton.AddHandler(PointerPressedEvent, new PointerEventHandler(NearManualFocusButtonPointerPressed), true);
+            NearManualFocusButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(NearManualFocusButtonPointerReleased), true);
+
+            FarManualFocusButton.AddHandler(PointerPressedEvent, new PointerEventHandler(FarManualFocusButtonPointerPressed), true);
+            FarManualFocusButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(FarManualFocusButtonPointerReleased), true);
+
+            ZoomInButton.AddHandler(PointerPressedEvent, new PointerEventHandler(ZoomInButtonPointerPressed), true);
+            ZoomInButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(ZoomInButtonPointerReleased), true);
+
+            ZoomOutButton.AddHandler(PointerPressedEvent, new PointerEventHandler(ZoomOutButtonPointerPressed), true);
+            ZoomOutButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(ZoomOutButtonPointerReleased), true);
+        }
+
+        private void ZoomOutButtonPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ZoomOutButtonPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ZoomInButtonPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ZoomInButtonPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void FarManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void FarManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void NearManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void NearManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CameraPowerToogleSwitchToggled(object sender, RoutedEventArgs e)
         {
             ToggleSwitch ts = sender as ToggleSwitch;
             PageViewModel.CameraPowerToogleSwitchToggled(ts.IsOn);
         }
+        
+        #endregion
     }
 }
