@@ -291,7 +291,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <Border Background="#000000"
+                    <Border Background="{StaticResource ContainerBackgroundColor}"
                             CornerRadius="8"
                             Padding="8">
                         <StackPanel>
@@ -318,7 +318,7 @@
                         </StackPanel>
                     </Border>
 
-                    <Border Background="#F2F2F2"
+                    <Border Background="{StaticResource ContainerBackgroundColor}"
                             CornerRadius="8"
                             Padding="8"
                             Margin="0,18,0,0">

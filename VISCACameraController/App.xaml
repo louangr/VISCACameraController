@@ -8,12 +8,11 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Other merged dictionaries here -->
+                <ResourceDictionary Source="/Resources/Design.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <mtuconverters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
             <mtuconverters:BoolNegationConverter x:Key="BoolNegationConverter" />
-            <!-- Other app resources here -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

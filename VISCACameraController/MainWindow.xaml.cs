@@ -33,7 +33,7 @@ namespace VISCACameraController
 
             var size = new SizeInt32();
             size.Width = 316;
-            size.Height = 593;
+            size.Height = 604;
 
             appWindow.Resize(size);
         }

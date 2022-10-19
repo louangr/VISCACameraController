@@ -21,6 +21,7 @@
     <Content Remove="Assets\BadgeLogo.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Resources\Design.xaml" />
     <None Remove="Views\ControllerPage.xaml" />
   </ItemGroup>
 
@@ -53,6 +54,9 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Resources\Design.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <None Update="viscaCommands.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
