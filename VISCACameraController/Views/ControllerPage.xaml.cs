@@ -42,42 +42,42 @@ namespace VISCACameraController.Views
 
         private void ZoomOutButtonPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.StopZoomCommand();
         }
 
         private void ZoomOutButtonPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.ZoomOutCommand();
         }
 
         private void ZoomInButtonPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.StopZoomCommand();
         }
 
         private void ZoomInButtonPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.ZoomInCommand();
         }
 
         private void FarManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.StopFocusCommand();
         }
 
         private void FarManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.FocusFurtherCommand();
         }
 
         private void NearManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.StopFocusCommand();
         }
 
         private void NearManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            PageViewModel.FocusNearerCommand();
         }
 
         private void CameraPowerToogleSwitchToggled(object sender, RoutedEventArgs e)

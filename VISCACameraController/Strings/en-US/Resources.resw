@@ -121,7 +121,7 @@
     <value>VISCA Camera Controller</value>
   </data>
   <data name="AutoFocusModeLabel" xml:space="preserve">
-    <value>Auto</value>
+    <value>Auto Focus</value>
   </data>
   <data name="CameraPowerToogleSwitch.OffContent" xml:space="preserve">
     <value>Off</value>
@@ -139,7 +139,7 @@
     <value>+</value>
   </data>
   <data name="ManualFocusModeLabel" xml:space="preserve">
-    <value>Manual</value>
+    <value>Manual Focus</value>
   </data>
   <data name="NearManualFocusButton.Content" xml:space="preserve">
     <value>-</value>

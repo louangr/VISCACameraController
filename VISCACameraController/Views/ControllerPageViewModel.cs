@@ -125,6 +125,36 @@ namespace VISCACameraController.Views
             IsCameraChangingPowerState = false;
         }
 
+        public void ZoomInCommand()
+        {
+            SendCommandOnSerialPort(viscaCommands.ZoomIn);
+        }
+
+        public void ZoomOutCommand()
+        {
+            SendCommandOnSerialPort(viscaCommands.ZoomOut);
+        }
+
+        public void StopZoomCommand()
+        {
+            SendCommandOnSerialPort(viscaCommands.StopZoomMove);
+        }
+
+        public void FocusFurtherCommand()
+        {
+            SendCommandOnSerialPort(viscaCommands.FocusFurther);
+        }
+
+        public void FocusNearerCommand()
+        {
+            SendCommandOnSerialPort(viscaCommands.FocusNearer);
+        }
+
+        public void StopFocusCommand()
+        {
+            SendCommandOnSerialPort(viscaCommands.StopFocusMove);
+        }
+
         #endregion
 
         #region Privates methods
