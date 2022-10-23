@@ -201,4 +201,19 @@
   <data name="ZoomOutButton.Content" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="TopTiltFontIcon.Glyph" xml:space="preserve">
+    <value>&#xE010;</value>
+  </data>
+  <data name="LeftPanFontIcon.Glyph" xml:space="preserve">
+    <value>&#xE00E;</value>
+  </data>
+  <data name="RightPanFontIcon.Glyph" xml:space="preserve">
+    <value>&#xE00F;</value>
+  </data>
+  <data name="BottomTiltFontIcon.Glyph" xml:space="preserve">
+    <value>&#xE011;</value>
+  </data>
+  <data name="SpeedLabelTextBlock.Text" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
 </root>

@@ -38,47 +38,51 @@ namespace VISCACameraController.Views
 
             ZoomOutButton.AddHandler(PointerPressedEvent, new PointerEventHandler(ZoomOutButtonPointerPressed), true);
             ZoomOutButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(ZoomOutButtonPointerReleased), true);
+
+            TopTiltButton.AddHandler(PointerPressedEvent, new PointerEventHandler(TopTiltButtonPointerPressed), true);
+            TopTiltButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(TopTiltButtonPointerReleased), true);
+
+            LeftPanButton.AddHandler(PointerPressedEvent, new PointerEventHandler(LeftPanButtonPointerPressed), true);
+            LeftPanButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(LeftPanButtonPointerReleased), true);
+
+            RightPanButton.AddHandler(PointerPressedEvent, new PointerEventHandler(RightPanButtonPointerPressed), true);
+            RightPanButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(RightPanButtonPointerReleased), true);
+
+            BottomTiltButton.AddHandler(PointerPressedEvent, new PointerEventHandler(BottomTiltButtonPointerPressed), true);
+            BottomTiltButton.AddHandler(PointerReleasedEvent, new PointerEventHandler(BottomTiltButtonPointerReleased), true);
         }
 
-        private void ZoomOutButtonPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.StopZoomCommand();
-        }
+        private void BottomTiltButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopTiltPanMoveCommand();
 
-        private void ZoomOutButtonPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.ZoomOutCommand();
-        }
+        private void BottomTiltButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.MoveBottomTiltCommand();
 
-        private void ZoomInButtonPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.StopZoomCommand();
-        }
+        private void RightPanButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopTiltPanMoveCommand();
 
-        private void ZoomInButtonPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.ZoomInCommand();
-        }
+        private void RightPanButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.MoveRightPanCommand();
 
-        private void FarManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.StopFocusCommand();
-        }
+        private void LeftPanButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopTiltPanMoveCommand();
 
-        private void FarManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.FocusFurtherCommand();
-        }
+        private void LeftPanButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.MoveLeftPanCommand();
 
-        private void NearManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.StopFocusCommand();
-        }
+        private void TopTiltButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopTiltPanMoveCommand();
 
-        private void NearManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            PageViewModel.FocusNearerCommand();
-        }
+        private void TopTiltButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.MoveTopTiltCommand();
+
+        private void ZoomOutButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopZoomCommand();
+
+        private void ZoomOutButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.ZoomOutCommand();
+
+        private void ZoomInButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopZoomCommand();
+
+        private void ZoomInButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.ZoomInCommand();
+
+        private void FarManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopFocusCommand();
+
+        private void FarManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.FocusFurtherCommand();
+
+        private void NearManualFocusButtonPointerReleased(object sender, PointerRoutedEventArgs e) => PageViewModel.StopFocusCommand();
+
+        private void NearManualFocusButtonPointerPressed(object sender, PointerRoutedEventArgs e) => PageViewModel.FocusNearerCommand();
 
         private void CameraPowerToogleSwitchToggled(object sender, RoutedEventArgs e)
         {

@@ -4,6 +4,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
@@ -31,6 +32,7 @@ namespace VISCACameraController.Views
         private RelayCommand<string> presetCommand;
         private List<FocusMode> focusModes;
         private FocusMode selectedFocusMode;
+        private int panAndTiltSpeed;
 
         #endregion
 
@@ -100,6 +102,15 @@ namespace VISCACameraController.Views
             }
         }
 
+        public int PanAndTiltSpeed
+        {
+            get => panAndTiltSpeed;
+            set
+            {
+                SetProperty(ref panAndTiltSpeed, value);
+            }
+        }
+
         public bool IsAutoFocusModeEnabled => SelectedFocusMode.Mode == Models.FocusModes.Auto;
 
         public string ConnectionButtonContent => LocalizedStrings.GetString(IsConnected ? "ConnectionButton_DisconnectionLabel" : "ConnectionButton_ConnectionLabel");
@@ -125,35 +136,27 @@ namespace VISCACameraController.Views
             IsCameraChangingPowerState = false;
         }
 
-        public void ZoomInCommand()
-        {
-            SendCommandOnSerialPort(viscaCommands.ZoomIn);
-        }
+        public void ZoomInCommand() => SendCommandOnSerialPort(viscaCommands.ZoomIn);
 
-        public void ZoomOutCommand()
-        {
-            SendCommandOnSerialPort(viscaCommands.ZoomOut);
-        }
+        public void ZoomOutCommand() => SendCommandOnSerialPort(viscaCommands.ZoomOut);
 
-        public void StopZoomCommand()
-        {
-            SendCommandOnSerialPort(viscaCommands.StopZoomMove);
-        }
+        public void StopZoomCommand() => SendCommandOnSerialPort(viscaCommands.StopZoomMove);
 
-        public void FocusFurtherCommand()
-        {
-            SendCommandOnSerialPort(viscaCommands.FocusFurther);
-        }
+        public void FocusFurtherCommand() => SendCommandOnSerialPort(viscaCommands.FocusFurther);
 
-        public void FocusNearerCommand()
-        {
-            SendCommandOnSerialPort(viscaCommands.FocusNearer);
-        }
+        public void FocusNearerCommand() => SendCommandOnSerialPort(viscaCommands.FocusNearer);
 
-        public void StopFocusCommand()
-        {
-            SendCommandOnSerialPort(viscaCommands.StopFocusMove);
-        }
+        public void StopFocusCommand() => SendCommandOnSerialPort(viscaCommands.StopFocusMove);
+
+        public void MoveRightPanCommand() => SendCommandOnSerialPort(TiltPanViscaCommandBuilder(viscaCommands.RightPanMove));
+
+        public void MoveLeftPanCommand() => SendCommandOnSerialPort(TiltPanViscaCommandBuilder(viscaCommands.LeftPanMove));
+
+        public void MoveBottomTiltCommand() => SendCommandOnSerialPort(TiltPanViscaCommandBuilder(viscaCommands.BottomTiltMove));
+
+        public void MoveTopTiltCommand() => SendCommandOnSerialPort(TiltPanViscaCommandBuilder(viscaCommands.TopTiltMove));
+
+        public void StopTiltPanMoveCommand() => SendCommandOnSerialPort(viscaCommands.StopTiltPanMove);
 
         #endregion
 
@@ -172,6 +175,7 @@ namespace VISCACameraController.Views
             selectedFocusMode = focusModes.Count > 0 ? focusModes.First() : null;
             serial = new SerialPort();
             isCameraChangingPowerState = false;
+            panAndTiltSpeed = 1;
 
             InitializeViscaCommands();
         }
@@ -231,6 +235,8 @@ namespace VISCACameraController.Views
             {
             }
         }
+
+        private string TiltPanViscaCommandBuilder(string command) => new StringBuilder(command).Replace("{S}", PanAndTiltSpeed.ToString("D2")).ToString();
 
         #endregion
     }

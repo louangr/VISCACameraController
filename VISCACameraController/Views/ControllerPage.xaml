@@ -339,6 +339,74 @@
                         </StackPanel>
                     </Border>
                 </StackPanel>
+
+                <Grid Grid.Column="2"
+                      HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="35" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Button x:Name="TopTiltButton"
+                            Grid.Column="2"
+                            Width="34"
+                            Height="34"
+                            Padding="0">
+                        <FontIcon x:Uid="TopTiltFontIcon"
+                                  FontFamily="Segoe MDL2 Assets" />
+                    </Button>
+                    <Button x:Name="LeftPanButton"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Width="34"
+                            Height="34"
+                            Padding="0">
+                        <FontIcon x:Uid="LeftPanFontIcon"
+                                  FontFamily="Segoe MDL2 Assets" />
+                    </Button>
+                    <Button x:Name="RightPanButton"
+                            Grid.Column="3"
+                            Grid.Row="1"
+                            Width="34"
+                            Height="34"
+                            Padding="0">
+                        <FontIcon x:Uid="RightPanFontIcon"
+                                  FontFamily="Segoe MDL2 Assets" />
+                    </Button>
+                    <Button x:Name="BottomTiltButton"
+                            Grid.Column="2"
+                            Grid.Row="2"
+                            Width="34"
+                            Height="34"
+                            Padding="0">
+                        <FontIcon x:Uid="BottomTiltFontIcon"
+                                  FontFamily="Segoe MDL2 Assets" />
+                    </Button>
+
+                    <TextBlock x:Uid="SpeedLabelTextBlock"
+                               Grid.ColumnSpan="5"
+                               Grid.Row="3"
+                               Margin="0,18,4,0" />
+
+                    <Slider Grid.ColumnSpan="5"
+                            Grid.Row="4"
+                            Maximum="18"
+                            Minimum="1"
+                            Orientation="Horizontal"
+                            TickPlacement="Outside"
+                            TickFrequency="2"
+                            Value="{x:Bind PageViewModel.PanAndTiltSpeed, Mode=TwoWay}" />
+                </Grid>
             </Grid>
         </StackPanel>
     </Grid>
