@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="f232fcfb-cd0a-4c09-931a-41522384d937"
+    Name="01826b75-8b33-4083-911d-6bef187fa0d3"
     Publisher="CN=louangr"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>VISCA Camera Controller</DisplayName>
+    <DisplayName>VISCACameraController</DisplayName>
     <PublisherDisplayName>louangr</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
   <Dependencies>
@@ -32,13 +32,13 @@
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
         DisplayName="VISCA Camera Controller"
-        Description="VISCA Camera Controller"
+        Description="Windows desktop app to control a PTZ camera using the VISCA protocol via a serial communication"
         BackgroundColor="transparent"
-        Square150x150Logo="Assets\Square150x150Logo.png"
-        Square44x44Logo="Assets\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"  Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png"/>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
-        <uap:LockScreen BadgeLogo="Assets\BadgeLogo.png" Notification="badge"/>
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png"/>
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+        <uap:LockScreen BadgeLogo="Images\BadgeLogo.png" Notification="badge"/>
       </uap:VisualElements>
     </Application>
   </Applications>

@@ -1,9 +1,8 @@
-﻿<Application
-    x:Class="VISCACameraController.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mtuconverters="using:CommunityToolkit.WinUI.UI.Converters"
-    xmlns:local="using:VISCACameraController">
+﻿<Application x:Class="VISCACameraController.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mtuconverters="using:CommunityToolkit.WinUI.UI.Converters"
+             xmlns:local="using:VISCACameraController">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

@@ -89,7 +89,7 @@ namespace VISCACameraController.Views
             ToggleSwitch ts = sender as ToggleSwitch;
             PageViewModel.CameraPowerToogleSwitchToggled(ts.IsOn);
         }
-        
+
         #endregion
     }
 }

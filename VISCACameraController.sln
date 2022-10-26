@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VISCACameraController", "VISCACameraController\VISCACameraController.csproj", "{F79B9427-BB5F-44A9-9E71-AA480715281F}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "VISCACameraController (Package)", "VISCACameraController (Package)\VISCACameraController (Package).wapproj", "{1AE2F326-C018-4700-B554-8343E74D99AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VISCACameraController", "VISCACameraController\VISCACameraController.csproj", "{CA94495D-1E38-4FE5-989C-30C5CF211C62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,29 +17,41 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|arm64.ActiveCfg = Debug|arm64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|arm64.Build.0 = Debug|arm64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|arm64.Deploy.0 = Debug|arm64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|x64.ActiveCfg = Debug|x64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|x64.Build.0 = Debug|x64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|x64.Deploy.0 = Debug|x64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|x86.ActiveCfg = Debug|x86
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|x86.Build.0 = Debug|x86
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Debug|x86.Deploy.0 = Debug|x86
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|arm64.ActiveCfg = Release|arm64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|arm64.Build.0 = Release|arm64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|arm64.Deploy.0 = Release|arm64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|x64.ActiveCfg = Release|x64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|x64.Build.0 = Release|x64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|x64.Deploy.0 = Release|x64
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|x86.ActiveCfg = Release|x86
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|x86.Build.0 = Release|x86
-		{F79B9427-BB5F-44A9-9E71-AA480715281F}.Release|x86.Deploy.0 = Release|x86
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|arm64.ActiveCfg = Debug|arm64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|arm64.Build.0 = Debug|arm64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|arm64.Deploy.0 = Debug|arm64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|x64.ActiveCfg = Debug|x64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|x64.Build.0 = Debug|x64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|x64.Deploy.0 = Debug|x64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|x86.ActiveCfg = Debug|x86
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|x86.Build.0 = Debug|x86
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Debug|x86.Deploy.0 = Debug|x86
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|arm64.ActiveCfg = Release|arm64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|arm64.Build.0 = Release|arm64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|arm64.Deploy.0 = Release|arm64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|x64.ActiveCfg = Release|x64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|x64.Build.0 = Release|x64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|x64.Deploy.0 = Release|x64
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|x86.ActiveCfg = Release|x86
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|x86.Build.0 = Release|x86
+		{1AE2F326-C018-4700-B554-8343E74D99AA}.Release|x86.Deploy.0 = Release|x86
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Debug|arm64.ActiveCfg = Debug|arm64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Debug|arm64.Build.0 = Debug|arm64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Debug|x64.ActiveCfg = Debug|x64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Debug|x64.Build.0 = Debug|x64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Debug|x86.ActiveCfg = Debug|x86
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Debug|x86.Build.0 = Debug|x86
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Release|arm64.ActiveCfg = Release|arm64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Release|arm64.Build.0 = Release|arm64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Release|x64.ActiveCfg = Release|x64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Release|x64.Build.0 = Release|x64
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Release|x86.ActiveCfg = Release|x86
+		{CA94495D-1E38-4FE5-989C-30C5CF211C62}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1AC27211-0218-49FB-9C57-85AAEDF601F8}
+		SolutionGuid = {13F35F02-4DAA-447C-84E9-94531DF901DC}
 	EndGlobalSection
 EndGlobal
