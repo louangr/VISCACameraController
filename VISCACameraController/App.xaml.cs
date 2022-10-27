@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using Microsoft.UI.Xaml;
 using VISCACameraController.Core;
 using VISCACameraController.Strings;
@@ -57,17 +56,7 @@ namespace VISCACameraController
             width = (int)(width * scalingFactor);
             height = (int)(height * scalingFactor);
 
-            PInvoke.User32.SetWindowPos(hwnd, PInvoke.User32.SpecialWindowHandles.HWND_TOP,
-                                        0, 0, width, height,
-                                        PInvoke.User32.SetWindowPosFlags.SWP_NOMOVE);
-        }
-
-        [ComImport]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        [Guid("EECDBF0E-BAE9-4CB6-A68E-9598E1CB57BB")]
-        internal interface IWindowNative
-        {
-            IntPtr WindowHandle { get; }
+            PInvoke.User32.SetWindowPos(hwnd, PInvoke.User32.SpecialWindowHandles.HWND_TOP, 0, 0, width, height, PInvoke.User32.SetWindowPosFlags.SWP_NOMOVE);
         }
     }
 }

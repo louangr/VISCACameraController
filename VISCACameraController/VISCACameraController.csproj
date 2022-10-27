@@ -30,6 +30,9 @@
     <Page Update="Resources\Design.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <None Update="icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="viscaCommands.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
