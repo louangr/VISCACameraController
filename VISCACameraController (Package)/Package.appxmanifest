@@ -9,7 +9,7 @@
   <Identity
     Name="01826b75-8b33-4083-911d-6bef187fa0d3"
     Publisher="CN=louangr"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <Properties>
     <DisplayName>VISCACameraController</DisplayName>
