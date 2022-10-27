@@ -11,6 +11,9 @@ namespace VISCACameraController.Models
         [DataMember(Name = "switchOffCamera")]
         public string SwitchOffCamera { get; set; }
 
+        [DataMember(Name = "setPreset")]
+        public string SetPreset { get; set; }
+
         [DataMember(Name = "goToPreset")]
         public string GoToPreset { get; set; }
 

@@ -90,6 +90,14 @@ namespace VISCACameraController.Views
             PageViewModel.CameraPowerToogleSwitchToggled(ts.IsOn);
         }
 
+        private void Preset8ButtonDoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            if (!PageViewModel.IsConnected)
+            {
+                PageViewModel.IsHiddenSetPresetButtonEnabled = !PageViewModel.IsHiddenSetPresetButtonEnabled;
+            }
+        }
+
         #endregion
     }
 }

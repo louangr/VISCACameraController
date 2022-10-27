@@ -1,6 +1,7 @@
 {
   "switchOnCamera": "8101040002FF",
   "switchOffCamera": "8101040003FF",
+  "setPreset": "8101043F010{P}FF",
   "goToPreset": "8101043F020{P}FF",
   "goToPreset1": "8101043F0201FF",
   "goToPreset2": "8101043F0202FF",

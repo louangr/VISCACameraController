@@ -83,7 +83,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="1">
                     <Grid Width="78"
                           Height="58">
@@ -107,7 +107,7 @@
                 </Button>
 
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="2"
                         Margin="18,0">
                     <Grid Width="78"
@@ -132,7 +132,7 @@
                 </Button>
 
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="3">
                     <Grid Width="78"
                           Height="58">
@@ -159,7 +159,7 @@
             <StackPanel Orientation="Horizontal"
                         Margin="0,18">
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="4">
                     <Grid Width="78"
                           Height="58">
@@ -183,7 +183,7 @@
                 </Button>
 
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="5"
                         Margin="18,0">
                     <Grid Width="78"
@@ -208,7 +208,7 @@
                 </Button>
 
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="6">
                     <Grid Width="78"
                           Height="58">
@@ -234,7 +234,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
                         CommandParameter="7"
                         Margin="49,0,18,0">
                     <Grid Width="78"
@@ -259,8 +259,9 @@
                 </Button>
 
                 <Button Style="{StaticResource PresetButtonStyle}"
-                        Command="{x:Bind PageViewModel.PresetCommand}"
-                        CommandParameter="8">
+                        Command="{x:Bind PageViewModel.CallPresetCommand}"
+                        CommandParameter="8"
+                        DoubleTapped="Preset8ButtonDoubleTapped">
                     <Grid Width="78"
                           Height="58">
                         <Grid.ColumnDefinitions>
@@ -408,6 +409,29 @@
                             Value="{x:Bind PageViewModel.PanAndTiltSpeed, Mode=TwoWay}" />
                 </Grid>
             </Grid>
+
+            <Border Background="{StaticResource ContainerBackgroundColor}"
+                    Visibility="{x:Bind PageViewModel.IsHiddenSetPresetButtonEnabled, Converter={StaticResource BoolToVisibilityConverter}, Mode=OneWay}"
+                    CornerRadius="8"
+                    Padding="8"
+                    Margin="0,18,0,0">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox CornerRadius="4"
+                              Margin="0,0,8,0"
+                              Width="100"
+                              ItemsSource="{x:Bind PageViewModel.AdjustablePresets, Mode=OneWay}"
+                              SelectedItem="{x:Bind PageViewModel.SelectedAdjustablePreset, Mode=TwoWay}" />
+                    <Button x:Uid="SetPresetButton"
+                            Grid.Column="1"
+                            HorizontalAlignment="Stretch"
+                            Command="{x:Bind PageViewModel.SetPresetCommand}" />
+                </Grid>
+            </Border>
         </StackPanel>
     </Grid>
 </core:CorePage>

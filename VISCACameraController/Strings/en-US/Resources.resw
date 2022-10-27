@@ -216,4 +216,7 @@
   <data name="SpeedLabelTextBlock.Text" xml:space="preserve">
     <value>Speed</value>
   </data>
+  <data name="SetPresetButton.Content" xml:space="preserve">
+    <value>Set Preset</value>
+  </data>
 </root>

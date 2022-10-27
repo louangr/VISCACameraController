@@ -29,10 +29,14 @@ namespace VISCACameraController.Views
         private RelayCommand connectionCommand;
         private bool isCameraChangingPowerState;
         private ViscaCommands viscaCommands;
-        private RelayCommand<string> presetCommand;
+        private RelayCommand<string> callPresetCommand;
         private List<FocusMode> focusModes;
         private FocusMode selectedFocusMode;
         private int panAndTiltSpeed;
+        private bool isHiddenSetPresetButtonEnabled;
+        private RelayCommand setPresetCommand;
+        private List<string> adjustablePresets;
+        private string selectedAdjustablePreset;
 
         #endregion
 
@@ -111,6 +115,33 @@ namespace VISCACameraController.Views
             }
         }
 
+        public bool IsHiddenSetPresetButtonEnabled
+        {
+            get => isHiddenSetPresetButtonEnabled;
+            set
+            {
+                SetProperty(ref isHiddenSetPresetButtonEnabled, value);
+            }
+        }
+
+        public List<string> AdjustablePresets
+        {
+            get => adjustablePresets;
+            set
+            {
+                SetProperty(ref adjustablePresets, value);
+            }
+        }
+
+        public string SelectedAdjustablePreset
+        {
+            get => selectedAdjustablePreset;
+            set
+            {
+                SetProperty(ref selectedAdjustablePreset, value);
+            }
+        }
+
         public bool IsAutoFocusModeEnabled => SelectedFocusMode.Mode == Models.FocusModes.Auto;
 
         public string ConnectionButtonContent => LocalizedStrings.GetString(IsConnected ? "ConnectionButton_DisconnectionLabel" : "ConnectionButton_ConnectionLabel");
@@ -120,8 +151,11 @@ namespace VISCACameraController.Views
         public RelayCommand ConnectionCommand
             => connectionCommand ?? (connectionCommand = new RelayCommand(() => Connect()));
 
-        public RelayCommand<string> PresetCommand
-            => presetCommand ?? (presetCommand = new RelayCommand<string>((string param) => SendPresetCommand(param)));
+        public RelayCommand<string> CallPresetCommand
+            => callPresetCommand ?? (callPresetCommand = new RelayCommand<string>((string param) => CallPreset(param)));
+
+        public RelayCommand SetPresetCommand
+            => setPresetCommand ?? (setPresetCommand = new RelayCommand(() => SetPreset()));
 
         #endregion
 
@@ -176,6 +210,8 @@ namespace VISCACameraController.Views
             serial = new SerialPort();
             isCameraChangingPowerState = false;
             panAndTiltSpeed = 1;
+            isHiddenSetPresetButtonEnabled = false;
+            adjustablePresets = new List<string>() { "1", "2", "3", "4", "5", "6", "7", "8" };
 
             InitializeViscaCommands();
         }
@@ -219,9 +255,17 @@ namespace VISCACameraController.Views
             }
         }
 
-        private void SendPresetCommand(string preset)
+        private void CallPreset(string presetNumber)
         {
-            SendCommandOnSerialPort(viscaCommands.GoToPreset.Replace("{P}", preset));
+            SendCommandOnSerialPort(viscaCommands.GoToPreset.Replace("{P}", presetNumber));
+        }
+
+        private void SetPreset()
+        {
+            if (!String.IsNullOrEmpty(SelectedAdjustablePreset))
+            {
+                SendCommandOnSerialPort(viscaCommands.SetPreset.Replace("{P}", SelectedAdjustablePreset));
+            }
         }
 
         private void SendCommandOnSerialPort(string command)
