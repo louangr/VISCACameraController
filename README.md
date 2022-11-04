@@ -5,8 +5,8 @@ VISCA Camera Controller is a Windows desktop app to control a PTZ camera using t
 <br>
 
 <p align="center">
-  <img src="./docs/dark.png" style="margin-right: 7px" />
-  <img src="./docs/light.png" style="margin-left: 7px" />
+  <img src="./docs/dark.png" style="margin-right: 15px" />
+  <img src="./docs/light.png" style="margin-left: 15px" />
 </p>
 
 <br>
