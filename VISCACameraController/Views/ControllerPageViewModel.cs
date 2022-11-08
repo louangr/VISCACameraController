@@ -10,6 +10,7 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using VISCACameraController.Core;
 using VISCACameraController.Models;
+using VISCACameraController.Repositories.Interfaces;
 using VISCACameraController.Strings;
 using VISCACameraController.Utils;
 
@@ -24,7 +25,6 @@ namespace VISCACameraController.Views
 
         private bool isConnected;
         private List<string> comPorts;
-        private string selectedComPort;
         private SerialPort serial;
         private RelayCommand connectionCommand;
         private bool isCameraChangingPowerState;
@@ -37,11 +37,14 @@ namespace VISCACameraController.Views
         private RelayCommand setPresetCommand;
         private List<string> adjustablePresets;
         private string selectedAdjustablePreset;
+        private ISettingsRepository settingsRepository;
 
         #endregion
 
-        public ControllerPageViewModel()
+        public ControllerPageViewModel(ISettingsRepository settingsRepository)
         {
+            this.settingsRepository = settingsRepository;
+
             Initialize();
         }
 
@@ -69,10 +72,10 @@ namespace VISCACameraController.Views
 
         public string SelectedComPort
         {
-            get => selectedComPort;
+            get => GetSelectedComPort();
             set
             {
-                SetProperty(ref selectedComPort, value);
+                settingsRepository.DefaultComPort = value;
             }
         }
 
@@ -200,7 +203,6 @@ namespace VISCACameraController.Views
         {
             isConnected = false;
             comPorts = new List<string>(SerialPort.GetPortNames());
-            selectedComPort = comPorts.Count > 0 ? comPorts.First() : string.Empty;
             focusModes = new List<FocusMode>();
             foreach (FocusModes focusMode in Enum.GetValues(typeof(FocusModes)))
             {
@@ -281,6 +283,17 @@ namespace VISCACameraController.Views
         }
 
         private string TiltPanViscaCommandBuilder(string command) => new StringBuilder(command).Replace("{S}", PanAndTiltSpeed.ToString("D2")).ToString();
+
+        private string GetSelectedComPort()
+        {
+            var defaultComPort = settingsRepository.DefaultComPort;
+            var isDefaultComPortAvailable = !string.IsNullOrEmpty(defaultComPort) && comPorts.IndexOf(defaultComPort) > -1;
+            return isDefaultComPortAvailable
+                ? defaultComPort
+                : comPorts.Count > 0
+                    ? comPorts.First()
+                    : string.Empty;
+        }
 
         #endregion
     }

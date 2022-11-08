@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
+using VISCACameraController.Repositories.Implementations;
+using VISCACameraController.Repositories.Interfaces;
 using VISCACameraController.Views;
 
 namespace VISCACameraController.Core
@@ -11,7 +13,7 @@ namespace VISCACameraController.Core
             var services = new ServiceCollection();
 
             // Repositories
-            // services.AddSingleton<IMyRepository, MyRepository>();
+            services.AddSingleton<ISettingsRepository, SettingsRepository>();
 
             // Services
             // services.AddSingleton(typeof(MyService));
