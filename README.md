@@ -27,4 +27,12 @@ You can deploy it yourself, for that you have to :
 - select `Yes, select a certificate`, then click `Create` and fill fields
 - trust your new certificate, then click `Next`
 - select the targeted CPU architecture and ensure `Solution Configuration` is `Release`
-- finally click `Create` and after compiling find your package in the `Output location` folder 
+- finally click `Create` and after compiling find your package in the `Output location` folder
+
+<br>
+
+## Hidden feature
+
+The app was created for the purpose of using the presets only. This does not permit anyone to change the presets using the app.
+
+But you can still set a preset by a hidden feature. To find out, double click on preset 8 while the app is not connecting. A new part will appear.
