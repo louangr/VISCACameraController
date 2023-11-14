@@ -42,12 +42,12 @@
     <DefaultLanguage>fr-FR</DefaultLanguage>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\VISCACameraController\VISCACameraController.csproj</EntryPointProjectUniqueName>
-    <PackageCertificateThumbprint>A51DB0BBC36B14BFA4F29DE1291835EF37702151</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>1DDE1CA4CAE39F23D866F863F930F9A35CC5566B</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
